@@ -1,6 +1,11 @@
 import React from 'react'
+import { Character } from "./characterInterface";
 
-const CharacterItem = ({ item }) => {
+interface CharacterItemProps {
+    item: Character;
+}
+
+const CharacterItem: React.FC<CharacterItemProps> = ({ item }) => {
     return (
         <div className='card'>
             <div className='card-inner'>

@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-const Search = ({ getQuery }) => {
+interface SearchProps {
+    getQuery: (q: string) => void;
+}
 
-    const [text, setText] = useState('');
+const Search: React.FC<SearchProps> = ({ getQuery }) => {
 
-    const onChange = (q) => {
+    const [text, setText] = useState<string>('');
+
+    const onChange = (q: string) => {
         setText(q);
         getQuery(q);
     }
@@ -25,4 +29,4 @@ const Search = ({ getQuery }) => {
     )
 }
 
-export default Search
+export default Search;

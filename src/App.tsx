@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Header from './components/UI/Header';
@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <Search getQuery={(q) => setQuery(q)} />
+      <Search getQuery={(q: string) => setQuery(q)} />
       <CharacterGrid isLoading={isLoading} items={items} />
     </div>
   );
